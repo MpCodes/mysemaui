@@ -1,13 +1,8 @@
-import React from 'react'
-import { Button } from 'semantic-ui-react';
+import React from 'react';
+import TheLayout from './containers/TheLayout';
 
 function App() {
-  return (
-    <div className="expad">
-     <h1>Hello There "#1b2033"</h1>
-     <Button>Click Here</Button>
-    </div>
-  );
+	return <TheLayout />;
 }
 
 export default App;
