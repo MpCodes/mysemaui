@@ -4,8 +4,8 @@ import { TheContent, TheSidebar, TheHeader } from './index';
 const TheLayout = () => {
 	return (
 		<div className='layout'>
-			<TheHeader />
 			<TheSidebar />
+			<TheHeader />
 			<TheContent />
 		</div>
 	);
