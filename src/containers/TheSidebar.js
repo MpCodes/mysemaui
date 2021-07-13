@@ -1,21 +1,15 @@
 import React from 'react';
+import SideBarMenu from '../components/SideBarMenu';
 
 const TheSidebar = () => {
 	return (
 		<div className='Thesidebar'>
-			menus
-			{/* <ul>
-				<li>Dashboard</li>
-				<li>Statistics</li>
-				<li>Roadmap</li>
-				<li>Milestones</li>
-				<li>Tickets</li>
-				<li>GitHub</li>
-				<li>FAQ</li>
-				<li>Search</li>
-				<li>Settings</li>
-				<li>Logout</li>
-			</ul> */}
+			<div className='sideHeader'>
+				<h4>Sema-UI</h4>
+			</div>
+			<div className='sideMain'>
+				<SideBarMenu />
+			</div>
 		</div>
 	);
 };
