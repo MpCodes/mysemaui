@@ -1,10 +1,18 @@
 import React from 'react';
+import { Layout } from 'antd';
+
+const { Content } = Layout;
 
 const TheContent = () => {
 	return (
-		<div className='TheContent'>
-			<p>Hello Wold</p>
-		</div>
+		<Content style={{ margin: '0 16px' }}>
+			<div
+				className='site-layout-background'
+				style={{ padding: 24, minHeight: 360 }}
+			>
+				Bill is a cat.
+			</div>
+		</Content>
 	);
 };
 

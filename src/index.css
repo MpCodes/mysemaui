@@ -1,10 +1,20 @@
-html,
-body {
-	margin: 0;
-	padding: 0;
+@import '~antd/dist/antd.css';
+
+.logo {
+	height: 32px;
+	margin: 16px;
+	background: rgba(255, 255, 255, 0.3);
 }
 
-.layout {
+.site-layout .site-layout-background {
+	background: #fff;
+}
+
+[data-theme='dark'] .site-layout .site-layout-background {
+	background: #141414;
+}
+
+/* .layout {
 	display: grid;
 	grid-template-rows: 8vh 92vh;
 	grid-template-areas:
@@ -19,13 +29,9 @@ body {
 }
 
 .Thesidebar {
-	/* background-color: #343a40; */
-	/* padding: 10px; */
 	grid-area: sidebar;
 	display: flex;
 	flex-direction: column;
-
-	/* #4b545c  for border bottom*/
 }
 
 .sideHeader {
@@ -54,4 +60,4 @@ body {
 
 ul {
 	list-style: none;
-}
+} */
