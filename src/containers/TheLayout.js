@@ -1,27 +1,22 @@
 import React from 'react';
 import { Layout, Menu } from 'antd';
-import {
-	MenuUnfoldOutlined,
-	MenuFoldOutlined,
-	UserOutlined,
-	VideoCameraOutlined,
-	UploadOutlined,
-	SettingOutlined,
-} from '@ant-design/icons';
+import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 
 import TheContent from './TheContent';
+import { Link } from 'react-router-dom';
+import navigation from './_nav';
 
 const { Header, Sider } = Layout;
 const { SubMenu } = Menu;
 
 class TheLayout extends React.Component {
 	state = {
-		collapsed: false,
+		collapsed: false
 	};
 
 	toggle = () => {
 		this.setState({
-			collapsed: !this.state.collapsed,
+			collapsed: !this.state.collapsed
 		});
 	};
 
@@ -30,26 +25,32 @@ class TheLayout extends React.Component {
 			<Layout>
 				<Sider trigger={null} collapsible collapsed={this.state.collapsed}>
 					<div className='logo' />
-					<Menu theme='dark' mode='inline' defaultSelectedKeys={['1']}>
-						<Menu.Item key='1' icon={<UserOutlined />}>
-							nav 1
-						</Menu.Item>
-						<Menu.Item key='2' icon={<VideoCameraOutlined />}>
-							nav 2
-						</Menu.Item>
-						<Menu.Item key='3' icon={<UploadOutlined />}>
-							nav 3
-						</Menu.Item>
-						<SubMenu
-							key='sub4'
-							icon={<SettingOutlined />}
-							title='Navigation Three'
-						>
-							<Menu.Item key='9'>Option 9</Menu.Item>
-							<Menu.Item key='10'>Option 10</Menu.Item>
-							<Menu.Item key='11'>Option 11</Menu.Item>
-							<Menu.Item key='12'>Option 12</Menu.Item>
-						</SubMenu>
+					<Menu theme='dark' mode='inline' defaultSelectedKeys={['7']}>
+						{navigation.map((navigation) => {
+							if (navigation._tag === 'SubMenu') {
+								return (
+									<SubMenu
+										key={navigation.key}
+										title={navigation.title}
+										icon={navigation.icon}
+									>
+										{navigation._children.map((_children) => {
+											return (
+												<Menu.Item key={_children.key}>
+													<Link to={_children.route}>{_children.title}</Link>
+												</Menu.Item>
+											);
+										})}
+									</SubMenu>
+								);
+							} else {
+								return (
+									<Menu.Item key={navigation.key} icon={navigation.icon}>
+										<Link to={navigation.route}>{navigation.title}</Link>
+									</Menu.Item>
+								);
+							}
+						})}
 					</Menu>
 				</Sider>
 				<Layout className='site-layout'>
@@ -58,7 +59,7 @@ class TheLayout extends React.Component {
 							this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
 							{
 								className: 'trigger',
-								onClick: this.toggle,
+								onClick: this.toggle
 							}
 						)}
 					</Header>

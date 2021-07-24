@@ -1,121 +1,139 @@
 /* import React from 'react'; */
+import {
+	SettingOutlined,
+	UserOutlined,
+	AppstoreOutlined,
+	BankOutlined,
+	ReadOutlined,
+	SolutionOutlined,
+	DollarCircleOutlined
+} from '@ant-design/icons';
 
 const _nav = [
 	{
-		_tag: 'CSidebarNavDropdown',
-		name: 'Settings',
+		_tag: 'MenuItem',
+		title: 'Dashboard',
+		route: '/dashboard',
+		icon: <AppstoreOutlined />,
+		key: '7'
+	},
+	{
+		_tag: 'SubMenu',
+		title: 'Settings',
 		route: '/settings',
-		icon: 'cil-settings',
+		icon: <SettingOutlined />,
+		key: '1',
 		_children: [
 			{
-				_tag: 'CSidebarNavItem',
-				name: 'College/Institution Info',
-				to: '/settings/addCollege',
+				title: 'College/Institution Info',
+				route: '/settings/addCollege',
+				key: '1.1'
 			},
 			{
-				_tag: 'CSidebarNavItem',
-				name: 'Users',
-				to: '/settings/allUsers',
+				title: 'Users',
+				route: '/settings/allUsers',
+				key: '1.2'
 			},
 			{
-				_tag: 'CSidebarNavItem',
-				name: 'Departments',
-				to: '/settings/allDepartments',
+				title: 'Departments',
+				route: '/settings/allDepartments',
+				key: '1.3'
 			},
 			{
-				_tag: 'CSidebarNavItem',
-				name: 'Programs',
-				to: '/settings/allPrograms',
+				title: 'Programs',
+				route: '/settings/allPrograms',
+				key: '1.4'
 			},
 			{
-				_tag: 'CSidebarNavItem',
-				name: 'Modules',
-				to: '/settings/allModules',
-			},
-		],
+				title: 'Modules',
+				route: '/settings/allModules',
+				key: '1.5'
+			}
+		]
 	},
 	{
-		_tag: 'CSidebarNavItem',
-		name: 'Students',
-		to: '/students/allStudents',
-		icon: 'cil-user',
+		_tag: 'MenuItem',
+		title: 'Students',
+		route: '/students/allStudents',
+		icon: <UserOutlined />,
+		key: '2'
 	},
 	{
-		_tag: 'CSidebarNavDropdown',
-		name: 'Classes',
+		_tag: 'SubMenu',
+		title: 'Classes',
 		route: '/base',
+		icon: <BankOutlined />,
+		key: '3',
 		_children: [
 			{
-				_tag: 'CSidebarNavItem',
-				name: 'All Classes',
-				to: '/base/breadcrumbs',
+				title: 'All Classes',
+				route: '/base/breadcrumbs',
+				key: '3.1'
 			},
 			{
-				_tag: 'CSidebarNavItem',
-				name: 'Bind Students',
-				to: '/base/cards',
-			},
-		],
+				title: 'Bind Students',
+				route: '/base/cards',
+				key: '3.2'
+			}
+		]
 	},
 	{
-		_tag: 'CSidebarNavDropdown',
-		name: 'Course',
+		_tag: 'SubMenu',
+		title: 'Course',
 		route: '/buttons',
+		icon: <ReadOutlined />,
+		key: '4',
 		_children: [
 			{
-				_tag: 'CSidebarNavItem',
-				name: 'All Courses',
-				to: '/buttons/buttons',
+				title: 'All Courses',
+				route: '/buttons/buttons',
+				key: '4.1'
 			},
 			{
-				_tag: 'CSidebarNavItem',
-				name: 'Bind Courses',
-				to: '/buttons/brand-buttons',
-			},
-		],
+				title: 'Bind Courses',
+				route: '/buttons/brand-buttons',
+				key: '4.2'
+			}
+		]
 	},
 	{
-		_tag: 'CSidebarNavDropdown',
-		name: 'Results',
+		_tag: 'SubMenu',
+		title: 'Results',
 		route: '/icons',
-		icon: 'cil-notes',
+		icon: <SolutionOutlined />,
+		key: '5',
 		_children: [
 			{
-				_tag: 'CSidebarNavItem',
-				name: 'Record Results',
-				to: '/results/allResults',
+				title: 'Record Results',
+				route: '/results/allResults',
+				key: '5.1'
 			},
 			{
-				_tag: 'CSidebarNavItem',
-				name: 'Publish Results',
-				to: '/results/publishedResults',
-			},
-		],
+				title: 'Publish Results',
+				route: '/results/publishedResults',
+				key: '5.2'
+			}
+		]
 	},
 	{
-		_tag: 'CSidebarNavDropdown',
-		name: 'School Fees',
+		_tag: 'SubMenu',
+		title: 'School Fees',
 		route: '/notifications',
+		icon: <DollarCircleOutlined />,
+		key: '6',
 		_children: [
 			{
-				_tag: 'CSidebarNavItem',
-				name: 'Fee Types',
-				to: '/notifications/alerts',
+				title: 'Fee Types',
+				route: '/notifications/alerts',
+				key: '6.1'
 			},
 			{
-				_tag: 'CSidebarNavItem',
-				name: 'Invoices',
-				to: '/notifications/badges',
-			},
-		],
-	},
-	{
-		_tag: 'CSidebarNavDivider',
-	},
-	{
-		_tag: 'CSidebarNavDivider',
-		className: 'm-2',
-	},
+				title: 'Invoices',
+				route: '/notifications/badges',
+				key: '6.2'
+			}
+		]
+	}
 ];
 
 export default _nav;
