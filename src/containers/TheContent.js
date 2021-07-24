@@ -8,7 +8,11 @@ import routes from '../routes';
 
 const { Content } = Layout;
 
-const loading = <Spin />;
+const loading = (
+	<div className='spinCenter'>
+		<Spin size='large' />
+	</div>
+);
 
 const TheContent = () => {
 	return (
