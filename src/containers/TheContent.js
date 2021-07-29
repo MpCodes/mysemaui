@@ -21,7 +21,7 @@ const TheContent = () => {
 			style={{
 				margin: '24px 16px',
 				padding: 24,
-				minHeight: 560,
+				minHeight: 200,
 			}}
 		>
 			<Suspense fallback={loading}>

@@ -11,18 +11,22 @@ const { SubMenu } = Menu;
 
 class TheLayout extends React.Component {
 	state = {
-		collapsed: false
+		collapsed: false,
 	};
 
 	toggle = () => {
 		this.setState({
-			collapsed: !this.state.collapsed
+			collapsed: !this.state.collapsed,
 		});
 	};
 
 	render() {
 		return (
-			<Layout>
+			<Layout
+				style={{
+					minHeight: 560,
+				}}
+			>
 				<Sider trigger={null} collapsible collapsed={this.state.collapsed}>
 					<div className='logo' />
 					<Menu theme='dark' mode='inline' defaultSelectedKeys={['7']}>
@@ -59,7 +63,7 @@ class TheLayout extends React.Component {
 							this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
 							{
 								className: 'trigger',
-								onClick: this.toggle
+								onClick: this.toggle,
 							}
 						)}
 					</Header>
