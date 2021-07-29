@@ -1,10 +1,12 @@
 import React from 'react';
-import { Form, Input, Button, Row, Col } from 'antd';
+import { Form, Input, Button, Row, Col, Space } from 'antd';
 
 const Dashboard = () => {
 	return (
 		<>
-			<Form layout='vertical'>
+			<h3 align='center'>Student Form</h3>
+			<Form layout='vertical' className='classForm'>
+				<Row>{/* For error */}</Row>
 				<Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
 					<Col span={12}>
 						<Form.Item label='Field A'>
@@ -23,22 +25,20 @@ const Dashboard = () => {
 						</Form.Item>
 					</Col>
 				</Row>
-				<Row>
-					<Col flex='auto'>4 / 5</Col>
-					<Col flex='200px'>
-						<Row gutter={16}>
-							<Col>
-								<Form.Item>
-									<Button type='primary'>Submit</Button>
-								</Form.Item>
-							</Col>
-							<Col>
-								<Form.Item>
-									<Button type='primary'>Cancel</Button>
-								</Form.Item>
-							</Col>
-						</Row>
-					</Col>
+				<Row justify='end'>
+					<Space>
+						<Form.Item>
+							<Button type='primary'>Save</Button>
+						</Form.Item>
+
+						<Form.Item>
+							<Button type='primary'>Save & Close</Button>
+						</Form.Item>
+
+						<Form.Item>
+							<Button type='primary'>Cancel</Button>
+						</Form.Item>
+					</Space>
 				</Row>
 			</Form>
 		</>

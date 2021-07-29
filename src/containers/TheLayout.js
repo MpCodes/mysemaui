@@ -1,6 +1,12 @@
 import React from 'react';
-import { Layout, Menu } from 'antd';
-import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+import { Col, Layout, Menu, Row, Space, Tooltip, Input } from 'antd';
+import {
+	MenuUnfoldOutlined,
+	MenuFoldOutlined,
+	SettingOutlined,
+	BellOutlined,
+	UserOutlined,
+} from '@ant-design/icons';
 
 import TheContent from './TheContent';
 import { Link } from 'react-router-dom';
@@ -8,6 +14,7 @@ import navigation from './_nav';
 
 const { Header, Sider } = Layout;
 const { SubMenu } = Menu;
+const { Search } = Input;
 
 class TheLayout extends React.Component {
 	state = {
@@ -27,7 +34,12 @@ class TheLayout extends React.Component {
 					minHeight: 560,
 				}}
 			>
-				<Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+				<Sider
+					trigger={null}
+					collapsible
+					collapsed={this.state.collapsed}
+					className='sidebarL'
+				>
 					<div className='logo' />
 					<Menu theme='dark' mode='inline' defaultSelectedKeys={['7']}>
 						{navigation.map((navigation) => {
@@ -59,13 +71,51 @@ class TheLayout extends React.Component {
 				</Sider>
 				<Layout className='site-layout'>
 					<Header className='site-layout-background' style={{ padding: 0 }}>
-						{React.createElement(
-							this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-							{
-								className: 'trigger',
-								onClick: this.toggle,
-							}
-						)}
+						<Row>
+							<Col span={12}>
+								<Space size='small' align='center'>
+									{React.createElement(
+										this.state.collapsed
+											? MenuUnfoldOutlined
+											: MenuFoldOutlined,
+										{
+											className: 'trigger',
+											onClick: this.toggle,
+										}
+									)}
+
+									<strong>COMPANY</strong>
+									<Search
+										placeholder='search'
+										allowClear
+										className='searchHead'
+										style={{ width: 200, marginTop: 15 }}
+									/>
+								</Space>
+							</Col>
+							<Col span={12}>
+								<Row justify='end'>
+									<Space size='large'>
+										<Col>
+											<Tooltip title='settings'>
+												<SettingOutlined />
+											</Tooltip>
+										</Col>
+										<Col>
+											<Tooltip title='notification'>
+												<BellOutlined />
+											</Tooltip>
+										</Col>
+										<Col>
+											<Tooltip title='profile'>
+												<UserOutlined />
+											</Tooltip>
+										</Col>
+										<Col>&nbsp;</Col>
+									</Space>
+								</Row>
+							</Col>
+						</Row>
 					</Header>
 					<TheContent />
 				</Layout>
