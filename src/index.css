@@ -37,12 +37,39 @@
 	border-radius: 6px;
 }
 
+.menu {
+	display: none;
+}
+
+.sidebarL {
+	height: 100vh;
+	/* theme='dark' */
+}
+
+.navbar {
+	background-color: white;
+	padding-left: 2rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+/* .sidemenu {
+	background: #343a40;
+} */
+
 @media (max-width: 768px) {
 	.sidebarL {
 		display: none;
 	}
 	.searchHead {
 		display: none;
+	}
+	.trigger {
+		display: none;
+	}
+
+	.menu {
+		display: block;
 	}
 }
 

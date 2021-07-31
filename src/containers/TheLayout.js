@@ -1,11 +1,12 @@
 import React from 'react';
-import { Col, Layout, Menu, Row, Space, Tooltip, Input } from 'antd';
+import { Col, Layout, Menu, Row, Space, Tooltip, Input, Button } from 'antd';
 import {
 	MenuUnfoldOutlined,
 	MenuFoldOutlined,
 	SettingOutlined,
 	BellOutlined,
 	UserOutlined,
+	MenuOutlined,
 } from '@ant-design/icons';
 
 import TheContent from './TheContent';
@@ -41,7 +42,12 @@ class TheLayout extends React.Component {
 					className='sidebarL'
 				>
 					<div className='logo' />
-					<Menu theme='dark' mode='inline' defaultSelectedKeys={['7']}>
+					<Menu
+						theme='dark'
+						className='sidemenu'
+						mode='inline'
+						defaultSelectedKeys={['7']}
+					>
 						{navigation.map((navigation) => {
 							if (navigation._tag === 'SubMenu') {
 								return (
@@ -83,6 +89,12 @@ class TheLayout extends React.Component {
 											onClick: this.toggle,
 										}
 									)}
+
+									<Button
+										className='menu'
+										type='primary'
+										icon={<MenuOutlined />}
+									/>
 
 									<strong>COMPANY</strong>
 									<Search

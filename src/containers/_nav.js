@@ -6,7 +6,7 @@ import {
 	BankOutlined,
 	ReadOutlined,
 	SolutionOutlined,
-	DollarCircleOutlined
+	DollarCircleOutlined,
 } from '@ant-design/icons';
 
 const _nav = [
@@ -15,7 +15,7 @@ const _nav = [
 		title: 'Dashboard',
 		route: '/dashboard',
 		icon: <AppstoreOutlined />,
-		key: '7'
+		key: '7',
 	},
 	{
 		_tag: 'SubMenu',
@@ -25,38 +25,38 @@ const _nav = [
 		key: '1',
 		_children: [
 			{
-				title: 'College/Institution Info',
+				title: 'Institution Info',
 				route: '/settings/addCollege',
-				key: '1.1'
+				key: '1.1',
 			},
 			{
 				title: 'Users',
 				route: '/settings/allUsers',
-				key: '1.2'
+				key: '1.2',
 			},
 			{
 				title: 'Departments',
 				route: '/settings/allDepartments',
-				key: '1.3'
+				key: '1.3',
 			},
 			{
 				title: 'Programs',
 				route: '/settings/allPrograms',
-				key: '1.4'
+				key: '1.4',
 			},
 			{
 				title: 'Modules',
 				route: '/settings/allModules',
-				key: '1.5'
-			}
-		]
+				key: '1.5',
+			},
+		],
 	},
 	{
 		_tag: 'MenuItem',
 		title: 'Students',
 		route: '/students/allStudents',
 		icon: <UserOutlined />,
-		key: '2'
+		key: '2',
 	},
 	{
 		_tag: 'SubMenu',
@@ -68,14 +68,14 @@ const _nav = [
 			{
 				title: 'All Classes',
 				route: '/base/breadcrumbs',
-				key: '3.1'
+				key: '3.1',
 			},
 			{
 				title: 'Bind Students',
 				route: '/base/cards',
-				key: '3.2'
-			}
-		]
+				key: '3.2',
+			},
+		],
 	},
 	{
 		_tag: 'SubMenu',
@@ -87,14 +87,14 @@ const _nav = [
 			{
 				title: 'All Courses',
 				route: '/buttons/buttons',
-				key: '4.1'
+				key: '4.1',
 			},
 			{
 				title: 'Bind Courses',
 				route: '/buttons/brand-buttons',
-				key: '4.2'
-			}
-		]
+				key: '4.2',
+			},
+		],
 	},
 	{
 		_tag: 'SubMenu',
@@ -106,14 +106,14 @@ const _nav = [
 			{
 				title: 'Record Results',
 				route: '/results/allResults',
-				key: '5.1'
+				key: '5.1',
 			},
 			{
 				title: 'Publish Results',
 				route: '/results/publishedResults',
-				key: '5.2'
-			}
-		]
+				key: '5.2',
+			},
+		],
 	},
 	{
 		_tag: 'SubMenu',
@@ -125,15 +125,15 @@ const _nav = [
 			{
 				title: 'Fee Types',
 				route: '/notifications/alerts',
-				key: '6.1'
+				key: '6.1',
 			},
 			{
 				title: 'Invoices',
 				route: '/notifications/badges',
-				key: '6.2'
-			}
-		]
-	}
+				key: '6.2',
+			},
+		],
+	},
 ];
 
 export default _nav;
