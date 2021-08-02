@@ -6,9 +6,12 @@ const Dashboard = () => {
 		<>
 			<h3 align='center'>Student Form</h3>
 			<Form layout='vertical' className='classForm'>
-				<Row>{/* For error */}</Row>
-				<Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-					<Col span={12}>
+				<Row>
+					{/* For error xs={24} xl={12}
+xs={24} xl={12} */}
+				</Row>
+				<Row gutter={{ xs: 32, sm: 24, md: 16, lg: 12 }}>
+					<Col>
 						<Form.Item label='Field A'>
 							<Input placeholder='input placeholder' />
 						</Form.Item>
@@ -16,7 +19,7 @@ const Dashboard = () => {
 							<Input placeholder='input placeholder' />
 						</Form.Item>
 					</Col>
-					<Col span={12}>
+					<Col>
 						<Form.Item label='Field C'>
 							<Input placeholder='input placeholder' />
 						</Form.Item>
