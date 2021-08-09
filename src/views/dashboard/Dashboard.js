@@ -6,12 +6,9 @@ const Dashboard = () => {
 		<>
 			<h3 align='center'>Student Form</h3>
 			<Form layout='vertical' className='classForm'>
-				<Row>
-					{/* For error xs={24} xl={12}
-xs={24} xl={12} */}
-				</Row>
-				<Row gutter={{ xs: 32, sm: 24, md: 16, lg: 12 }}>
-					<Col>
+				<Row></Row>
+				<Row gutter={16}>
+					<Col xs={24} sm={24} md={12} lg={12} xl={12}>
 						<Form.Item label='Field A'>
 							<Input placeholder='input placeholder' />
 						</Form.Item>
@@ -19,7 +16,7 @@ xs={24} xl={12} */}
 							<Input placeholder='input placeholder' />
 						</Form.Item>
 					</Col>
-					<Col>
+					<Col xs={24} sm={24} md={12} lg={12} xl={12}>
 						<Form.Item label='Field C'>
 							<Input placeholder='input placeholder' />
 						</Form.Item>
@@ -31,15 +28,21 @@ xs={24} xl={12} */}
 				<Row justify='end'>
 					<Space>
 						<Form.Item>
-							<Button type='primary'>Save</Button>
+							<Button type='primary' size='small'>
+								Save
+							</Button>
 						</Form.Item>
 
 						<Form.Item>
-							<Button type='primary'>Save & Close</Button>
+							<Button type='primary' size='small'>
+								Save & Close
+							</Button>
 						</Form.Item>
 
 						<Form.Item>
-							<Button type='primary'>Cancel</Button>
+							<Button type='primary' size='small'>
+								Cancel
+							</Button>
 						</Form.Item>
 					</Space>
 				</Row>
