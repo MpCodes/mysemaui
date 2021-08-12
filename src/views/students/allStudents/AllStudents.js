@@ -9,16 +9,22 @@ const columns = [
 		title: 'Name',
 		dataIndex: 'name',
 		key: 'name',
+		defaultSortOrder: 'descend',
+		sorter: (a, b) => a.name.length - b.name.length,
 	},
 	{
 		title: 'Age',
 		dataIndex: 'age',
 		key: 'age',
+		defaultSortOrder: 'descend',
+		sorter: (a, b) => a.age - b.age,
 	},
 	{
 		title: 'Address',
 		dataIndex: 'address',
 		key: 'address',
+		defaultSortOrder: 'descend',
+		sorter: (a, b) => a.address.length - b.address.length,
 	},
 	{
 		title: 'Action',
@@ -58,11 +64,33 @@ const data = [
 	},
 ];
 
+const rowSelection = {
+	onChange: (selectedRowKeys, selectedRows) => {
+		console.log(
+			`selectedRowKeys: ${selectedRowKeys}`,
+			'selectedRows: ',
+			selectedRows
+		);
+	},
+	getCheckboxProps: (record) => ({
+		disabled: record.name === 'Disabled User',
+		// Column configuration not to be checked
+		name: record.name,
+	}),
+};
+
 const AllStudents = () => {
 	return (
-		<>
-			<Table columns={columns} dataSource={data} />
-		</>
+		<div>
+			<Table
+				rowSelection={{
+					type: 'checkbox',
+					...rowSelection,
+				}}
+				columns={columns}
+				dataSource={data}
+			/>
+		</div>
 	);
 };
 
