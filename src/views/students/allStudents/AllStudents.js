@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table, Space, Button, Row } from 'antd';
 import { EditOutlined, EyeOutlined, DeleteOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 /* import usersData from "../../users/UsersData"; */
 
@@ -10,21 +11,21 @@ const columns = [
 		dataIndex: 'name',
 		key: 'name',
 		defaultSortOrder: 'descend',
-		sorter: (a, b) => a.name.length - b.name.length,
+		sorter: (a, b) => a.name.length - b.name.length
 	},
 	{
 		title: 'Age',
 		dataIndex: 'age',
 		key: 'age',
 		defaultSortOrder: 'descend',
-		sorter: (a, b) => a.age - b.age,
+		sorter: (a, b) => a.age - b.age
 	},
 	{
 		title: 'Address',
 		dataIndex: 'address',
 		key: 'address',
 		defaultSortOrder: 'descend',
-		sorter: (a, b) => a.address.length - b.address.length,
+		sorter: (a, b) => a.address.length - b.address.length
 	},
 	{
 		title: 'Action',
@@ -39,8 +40,8 @@ const columns = [
         <a>Delete</a> */}
 				</Space>
 			</Row>
-		),
-	},
+		)
+	}
 ];
 
 const data = [
@@ -48,20 +49,20 @@ const data = [
 		key: '1',
 		name: 'John Brown',
 		age: 32,
-		address: 'New York No. 1 Lake Park',
+		address: 'New York No. 1 Lake Park'
 	},
 	{
 		key: '2',
 		name: 'Jim Green',
 		age: 42,
-		address: 'London No. 1 Lake Park',
+		address: 'London No. 1 Lake Park'
 	},
 	{
 		key: '3',
 		name: 'Joe Black',
 		age: 32,
-		address: 'Sidney No. 1 Lake Park',
-	},
+		address: 'Sidney No. 1 Lake Park'
+	}
 ];
 
 const rowSelection = {
@@ -75,17 +76,25 @@ const rowSelection = {
 	getCheckboxProps: (record) => ({
 		disabled: record.name === 'Disabled User',
 		// Column configuration not to be checked
-		name: record.name,
-	}),
+		name: record.name
+	})
 };
 
 const AllStudents = () => {
 	return (
 		<div>
+			<h3 align='center'>All Students</h3>
+			<Space className='spaceDivider'>
+				<Link to='/students/addStudent'>
+					<Button>Add Student</Button>
+				</Link>
+				<Button>PDF</Button>
+				<Button>EXCEL</Button>
+			</Space>
 			<Table
 				rowSelection={{
 					type: 'checkbox',
-					...rowSelection,
+					...rowSelection
 				}}
 				columns={columns}
 				dataSource={data}
